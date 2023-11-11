@@ -13,7 +13,7 @@ describe('Login', () => {
     loginPage.failedAlertBody.should('be.visible').should('have.text', 'Invalid Email or password.')
   })
 
-  it.only('should be able to login with matching credentials', () => {
+  it('should be able to login with matching credentials', () => {
     cy.visit('/')
     homePage.signInBtn.click({force: true})
     loginPage.login(Cypress.env('email'), Cypress.env('password'))
